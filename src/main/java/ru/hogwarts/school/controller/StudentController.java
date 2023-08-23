@@ -93,5 +93,16 @@ public class StudentController {
         return ResponseEntity.ok(studentService.getSomeNumber());
     }
 
+    @GetMapping("/print_students_threads")
+    public ResponseEntity<Void> printStudentsInThreads() {
+        studentService.printStudentsInThreads();
+        return ResponseEntity.ok().build();
+    }
+
+    @GetMapping("/print_students_syncro_threads")
+    public ResponseEntity<Void> printStudentsInSyncronizedThreads() {
+        studentService.printStudentsInSyncronizedThreads();
+        return ResponseEntity.ok().build();
+    }
 
 }
